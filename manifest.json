@@ -12,20 +12,19 @@
    "commands": {
       "_execute_browser_action": {
          "suggested_key": {
-            "chromeos": "Alt+P",
-            "linux": "Alt+P",
-            "mac": "Alt+P",
-            "windows": "Alt+P"
+            "chromeos": "Alt+S",
+            "linux": "Alt+S",
+            "mac": "Alt+S",
+            "windows": "Alt+S"
          }
       }
    },
-   "description": "Picture-in-Picture",
+   "description": "Sound Compressor",
    "icons": {
       "128": "assets/icon128.png"
    },
    "manifest_version": 2,
-   "minimum_chrome_version": "69.0.3483.0",
-   "name": "Picture-in-Picture Mode",
-   "permissions": [ "\u003Call_urls>", "contextMenus" ],
+   "name": "Sound Compressor",
+   "permissions": [ "<all_urls>" ],
    "version": "0.1"
 }
