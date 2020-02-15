@@ -1,20 +1,9 @@
-const inject = () => {
-  chrome.tabs.executeScript(
-    { file: 'script.js', allFrames: true },
-    () => chrome.runtime.lastError
-  )
+const inject = () => { chrome.tabs.executeScript({ file: 'script.js', allFrames: true }, () => chrome.runtime.lastError) }
+
+if (!document.pictureInPictureEnabled) {
+  chrome.browserAction.setTitle({ title: 'Picture-in-Picture NOT supported' })
+} else {
+  chrome.browserAction.onClicked.addListener(tab => {
+    inject()
+  })
 }
-
-chrome.browserAction.onClicked.addListener(tab => {
-  inject()
-})
-
-// chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-//   if (msg.action === 'updateIcon') {
-//     if (msg.processing) {
-//       chrome.browserAction.setIcon({ path: '/assets/on.png' })
-//     } else {
-//       chrome.browserAction.setIcon({ path: '/assets/off.png' })
-//     }
-//   }
-// })
